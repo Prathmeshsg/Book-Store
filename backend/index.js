@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import bookRoutes from "./src/books/book.route.js";
 import orderRoutes from "./src/orders/order.route.js";
+import userRoutes from "./src/users/user.route.js";
 import cors from "cors";
 
 import dotenv from "dotenv";
@@ -21,6 +22,8 @@ app.use(
 
 app.use("/api/books", bookRoutes);
 app.use("/api/orders", orderRoutes);
+app.use("/api/auth", userRoutes);
+
 
 
 async function main() {
